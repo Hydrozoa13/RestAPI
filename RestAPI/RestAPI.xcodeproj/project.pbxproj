@@ -16,6 +16,7 @@
 		D1EFD8C22AD01FD5009B0044 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C12AD01FD5009B0044 /* CollectionVC.swift */; };
 		D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C32AD02203009B0044 /* ActionsCVCell.swift */; };
 		D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C52AD0264E009B0044 /* CollectionVCExt.swift */; };
+		D1EFD8CA2AD02CA6009B0044 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C92AD02CA6009B0044 /* ImageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D1EFD8C12AD01FD5009B0044 /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		D1EFD8C32AD02203009B0044 /* ActionsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCVCell.swift; sourceTree = "<group>"; };
 		D1EFD8C52AD0264E009B0044 /* CollectionVCExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVCExt.swift; sourceTree = "<group>"; };
+		D1EFD8C92AD02CA6009B0044 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,8 @@
 		D1EFD8BD2AD01F19009B0044 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D1EFD8C12AD01FD5009B0044 /* CollectionVC.swift */,
-				D1EFD8C32AD02203009B0044 /* ActionsCVCell.swift */,
+				D1EFD8C72AD02C6E009B0044 /* ActionsCollection */,
+				D1EFD8C82AD02C82009B0044 /* ImageView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +124,23 @@
 				D1EFD8C52AD0264E009B0044 /* CollectionVCExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D1EFD8C72AD02C6E009B0044 /* ActionsCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D1EFD8C12AD01FD5009B0044 /* CollectionVC.swift */,
+				D1EFD8C32AD02203009B0044 /* ActionsCVCell.swift */,
+			);
+			path = ActionsCollection;
+			sourceTree = "<group>";
+		};
+		D1EFD8C82AD02C82009B0044 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D1EFD8C92AD02CA6009B0044 /* ImageVC.swift */,
+			);
+			path = ImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +216,7 @@
 			files = (
 				D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */,
 				D1EFD8C02AD01F71009B0044 /* UserActions.swift in Sources */,
+				D1EFD8CA2AD02CA6009B0044 /* ImageVC.swift in Sources */,
 				D1EFD8C22AD01FD5009B0044 /* CollectionVC.swift in Sources */,
 				D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */,
 				D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */,

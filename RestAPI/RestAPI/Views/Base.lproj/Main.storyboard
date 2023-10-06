@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="955" y="6"/>
         </scene>
-        <!--View Controller-->
+        <!--ImageVC-->
         <scene sceneID="sNa-33-qlY">
             <objects>
-                <viewController id="z9W-TW-ebp" sceneMemberID="viewController">
+                <viewController id="z9W-TW-ebp" customClass="ImageVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WBZ-PU-BpX">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +99,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="icb-4u-1ua"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="GmE-AB-YHw" id="yYA-jl-7M3"/>
+                        <outlet property="imageView" destination="Hzx-8b-ttF" id="AkL-vN-0A2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzZ-pt-pK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
