@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTw-Jv-5Vy">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,12 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--CollectionVC-->
         <scene sceneID="Qjp-bt-Fh2">
             <objects>
-                <collectionViewController id="t1D-cd-7IJ" sceneMemberID="viewController">
+                <collectionViewController id="t1D-cd-7IJ" customClass="CollectionVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8Lq-ee-pwg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I6k-AI-uqa">
@@ -23,27 +23,38 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="tOg-OO-L0i">
-                                <rect key="frame" x="37.666666666666664" y="0.0" width="318" height="127"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="tOg-OO-L0i" customClass="ActionsCVCell" customModule="RestAPI" customModuleProvider="target">
+                                <rect key="frame" x="56" y="0.0" width="318" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xFs-1M-2NW">
                                     <rect key="frame" x="0.0" y="0.0" width="318" height="127"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-l9-tWC">
+                                            <rect key="frame" x="0.0" y="0.0" width="318" height="127"/>
+                                            <color key="backgroundColor" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMm-ki-dgS">
                                             <rect key="frame" x="128.33333333333334" y="49.333333333333336" width="61.333333333333343" height="28.666666666666664"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                            <color key="textColor" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nMm-ki-dgS" firstAttribute="centerX" secondItem="xFs-1M-2NW" secondAttribute="centerX" id="BkB-dw-R47"/>
-                                        <constraint firstItem="nMm-ki-dgS" firstAttribute="centerY" secondItem="xFs-1M-2NW" secondAttribute="centerY" id="Glg-kD-O5n"/>
+                                        <constraint firstItem="nMm-ki-dgS" firstAttribute="centerX" secondItem="wq6-l9-tWC" secondAttribute="centerX" id="FM1-BK-nzi"/>
+                                        <constraint firstItem="nMm-ki-dgS" firstAttribute="centerY" secondItem="wq6-l9-tWC" secondAttribute="centerY" id="ND7-kB-N3P"/>
+                                        <constraint firstAttribute="trailing" secondItem="wq6-l9-tWC" secondAttribute="trailing" id="dXz-u1-PPB"/>
+                                        <constraint firstAttribute="bottom" secondItem="wq6-l9-tWC" secondAttribute="bottom" id="pgh-fd-6SW"/>
+                                        <constraint firstItem="wq6-l9-tWC" firstAttribute="leading" secondItem="xFs-1M-2NW" secondAttribute="leading" id="rH4-yk-egI"/>
+                                        <constraint firstItem="wq6-l9-tWC" firstAttribute="top" secondItem="xFs-1M-2NW" secondAttribute="top" id="saV-tt-bi7"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="customSize" width="318" height="127"/>
+                                <connections>
+                                    <outlet property="infoLbl" destination="nMm-ki-dgS" id="2Ap-J6-4mb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -65,14 +76,14 @@
             <objects>
                 <viewController id="z9W-TW-ebp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WBZ-PU-BpX">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="Hzx-8b-ttF">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="795"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="GmE-AB-YHw">
-                                <rect key="frame" x="178" y="442" width="37" height="37"/>
+                                <rect key="frame" x="196.66666666666666" y="482" width="37" height="37"/>
                                 <color key="color" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
@@ -99,9 +110,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VTw-Jv-5Vy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AxW-4B-RJw">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
