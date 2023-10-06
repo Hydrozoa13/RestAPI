@@ -17,6 +17,7 @@
 		D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C32AD02203009B0044 /* ActionsCVCell.swift */; };
 		D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C52AD0264E009B0044 /* CollectionVCExt.swift */; };
 		D1EFD8CA2AD02CA6009B0044 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8C92AD02CA6009B0044 /* ImageVC.swift */; };
+		D1EFD8CC2AD03B00009B0044 /* ImagesURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8CB2AD03B00009B0044 /* ImagesURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D1EFD8C32AD02203009B0044 /* ActionsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCVCell.swift; sourceTree = "<group>"; };
 		D1EFD8C52AD0264E009B0044 /* CollectionVCExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVCExt.swift; sourceTree = "<group>"; };
 		D1EFD8C92AD02CA6009B0044 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		D1EFD8CB2AD03B00009B0044 /* ImagesURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D1EFD8BF2AD01F71009B0044 /* UserActions.swift */,
+				D1EFD8CB2AD03B00009B0044 /* ImagesURL.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */,
 				D1EFD8C02AD01F71009B0044 /* UserActions.swift in Sources */,
 				D1EFD8CA2AD02CA6009B0044 /* ImageVC.swift in Sources */,
+				D1EFD8CC2AD03B00009B0044 /* ImagesURL.swift in Sources */,
 				D1EFD8C22AD01FD5009B0044 /* CollectionVC.swift in Sources */,
 				D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */,
 				D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */,

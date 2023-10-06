@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ImageVC: UIViewController {
+final class ImageVC: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
-    private let imageURL = "https://i.artfile.ru/2880x1800_910841_[www.ArtFile.ru].jpg"
+    private let randomImage = ImagesURL().imagesArray.randomElement()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,8 @@ class ImageVC: UIViewController {
     }
     
     private func fetchImage() {
-        guard let url = URL(string: imageURL) else { return }
+        guard let imageURL = randomImage,
+              let url = URL(string: imageURL) else { return }
         let urlRequest = URLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
 
@@ -36,7 +37,10 @@ class ImageVC: UIViewController {
                 if let data = data,
                    let image = UIImage(data: data) {
                     self?.imageView.image = image
-                } else { print("Error") }
+                } else {
+                    let errorImage = UIImage(named: "error404")
+                    self?.imageView.image = errorImage
+                }
             }
         }.resume()
     }

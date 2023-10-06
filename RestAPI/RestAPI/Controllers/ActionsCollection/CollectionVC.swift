@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionVC: UICollectionViewController {
+final class CollectionVC: UICollectionViewController {
     
     private let reuseIdentifier = "Cell"
     private let userActions = UserActions.allCases
