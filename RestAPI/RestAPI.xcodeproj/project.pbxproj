@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D10A2A812AD68EC400965394 /* UsersListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A2A802AD68EC400965394 /* UsersListTVC.swift */; };
 		D10A2A832AD68F3200965394 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A2A822AD68F3200965394 /* UserModel.swift */; };
+		D10A2A852AD6D33300965394 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A2A842AD6D33300965394 /* ApiConstants.swift */; };
 		D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */; };
 		D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */; };
 		D1EFD8AD2AD016D9009B0044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EFD8AB2AD016D9009B0044 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		D10A2A802AD68EC400965394 /* UsersListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTVC.swift; sourceTree = "<group>"; };
 		D10A2A822AD68F3200965394 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D10A2A842AD6D33300965394 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		D1EFD8A22AD016D9009B0044 /* RestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				D1EFD8BF2AD01F71009B0044 /* UserActions.swift */,
 				D1EFD8CB2AD03B00009B0044 /* ImagesURL.swift */,
 				D10A2A822AD68F3200965394 /* UserModel.swift */,
+				D10A2A842AD6D33300965394 /* ApiConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10A2A852AD6D33300965394 /* ApiConstants.swift in Sources */,
 				D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */,
 				D1EFD8C02AD01F71009B0044 /* UserActions.swift in Sources */,
 				D1EFD8CA2AD02CA6009B0044 /* ImageVC.swift in Sources */,
