@@ -29,16 +29,15 @@ class UsersListTVC: UITableViewController {
         cell.detailTextLabel?.text = user.email
         return cell
     }
-
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let index = tableView.indexPathForSelectedRow,
+           let vc = segue.destination as? UserDetailVC {
+            vc.user = users[index.row]
+        }
     }
-    */
     
     // MARK: - Private functions
     
