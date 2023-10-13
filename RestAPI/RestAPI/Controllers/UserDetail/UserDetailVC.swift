@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import MapKit
 
 class UserDetailVC: UIViewController {
     
-    @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var phoneLbl: UILabel!    
     @IBOutlet weak var websiteLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var companyLbl: UILabel!
     
     var user: User?
     
@@ -21,7 +23,9 @@ class UserDetailVC: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-
+    
+    @IBAction func openMapAction() { setCoordinatesOnMap() }
+    
     /*
     // MARK: - Navigation
 
@@ -33,10 +37,27 @@ class UserDetailVC: UIViewController {
     */
     
     private func setupUI() {
-        nameLbl.text = user?.name
+        navigationItem.title = user?.name
         usernameLbl.text = user?.username
         emailLbl.text = user?.email
         phoneLbl.text = user?.phone
         websiteLbl.text = user?.website
+        addressLbl.text = user?.address?.zipcode
+        companyLbl.text = user?.company?.name ?? "Unknown"
+    }
+    
+    private func setCoordinatesOnMap() {
+        if let user = user,
+           let latitudeString = user.address?.geo?.lat,
+           let longitudeString = user.address?.geo?.lng,
+           let latitude = Double(latitudeString),
+           let longitude = Double(longitudeString) {
+            let coordinate = CLLocationCoordinate2D(latitude: latitude,
+                                                    longitude: longitude)
+            let placemark = MKPlacemark(coordinate: coordinate)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = user.name
+            mapItem.openInMaps(launchOptions: nil)
+        }
     }
 }
