@@ -42,8 +42,15 @@ class UserDetailVC: UIViewController {
         emailLbl.text = user?.email
         phoneLbl.text = user?.phone
         websiteLbl.text = user?.website
-        addressLbl.text = user?.address?.zipcode
-        companyLbl.text = user?.company?.name ?? "Unknown"
+        companyLbl.text = user?.company?.name
+        if let city = user?.address?.city,
+           let street = user?.address?.street,
+           let suite = user?.address?.suite,
+           let zipcode = user?.address?.zipcode {
+            addressLbl.text = "\(city)\n\(street)\n\(suite)\n\(zipcode)"
+        } else {
+            addressLbl.text = "Unknown"
+        }
     }
     
     private func setCoordinatesOnMap() {
