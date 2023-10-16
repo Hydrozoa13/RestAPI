@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Alamofire
 
 class NetworkService {
     
-    static func deletePost(postId: Int,
-                           callback: () -> ()) {
-        
+    static func deletePost(postId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.postsPath)/\(postId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
     }
 }
