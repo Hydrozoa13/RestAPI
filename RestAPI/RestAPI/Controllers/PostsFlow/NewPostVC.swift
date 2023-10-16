@@ -18,70 +18,25 @@ class NewPostVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleTF.layer.cornerRadius = 25
+        setupUI()
     }
     
     @IBAction func postURLSession() {
-        if let userId = user?.id,
-           let title = titleTF.text,
-           let body = bodyTV.text,
-           let url = ApiConstants.postsURL {
-            
-            var request = URLRequest(url: url)
-            
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            let postBodyJSON: [String:Any] = ["userId": userId,
-                                              "title": title,
-                                              "body": body]
-            let httpBody = try? JSONSerialization.data(withJSONObject: postBodyJSON)
-            request.httpBody = httpBody
-            
-            URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                print(response as Any)
-                if let data = data {
-                    let json = JSON(data)
-                    print(json)
-                }
-                
-                if let error = error {
-                    print(error)
-                }
-                
-                DispatchQueue.main.async {
-                    self?.navigationController?.popViewController(animated: true)
-                }
-            }.resume()
-        }
+        NetworkService.postURLSession(for: user,
+                                      title: titleTF.text,
+                                      body: bodyTV.text,
+                                      navC: navigationController)
     }
     
     @IBAction func postAlamofire() {
-        if let userId = user?.id,
-           let title = titleTF.text,
-           let body = bodyTV.text,
-           let url = ApiConstants.postsURL {
-            
-            let parameters: Parameters = ["userId": userId,
-                                          "title": title,
-                                          "body": body]
-            AF.request(url, method: .post,
-                       parameters: parameters,
-                       encoding: JSONEncoding.default)
-            .response { [weak self] response in
-                debugPrint(response)
-                print(response.request as Any)
-                print(response.response as Any)
-                debugPrint(response.result)
-                
-                switch response.result {
-                case .success(let data):
-                    print(JSON(data as Any))
-                    self?.navigationController?.popViewController(animated: true)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
+        NetworkService.postAlamofire(for: user,
+                                     title: titleTF.text,
+                                     body: bodyTV.text,
+                                     navC: navigationController)
+    }
+    
+    private func setupUI() {
+        navigationItem.title = "New Post"
+        bodyTV.layer.cornerRadius = 15
     }
 }
