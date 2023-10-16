@@ -18,7 +18,7 @@
                         <color key="backgroundColor" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="separatorColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="vQD-OE-HNU" style="IBUITableViewCellStyleDefault" id="wDh-NA-a9N">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="vQD-OE-HNU" style="IBUITableViewCellStyleDefault" id="wDh-NA-a9N">
                                 <rect key="frame" x="20" y="55.333332061767578" width="353" height="84.666664123535156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wDh-NA-a9N" id="ufT-kk-J6O">
@@ -43,6 +43,9 @@
                             <outlet property="delegate" destination="2Wv-YQ-Q6S" id="okl-T3-KYN"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="bdV-JL-8hy" kind="show" identifier="openPhotos" id="Xlu-39-V40"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXc-Vy-qea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +56,7 @@
             <objects>
                 <collectionViewController id="bdV-JL-8hy" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kRD-X6-3MS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aG2-g5-jmA">
@@ -63,7 +66,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b8U-eq-grF">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="b8U-eq-grF">
                                 <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pi1-1n-4Ya">
@@ -77,6 +80,10 @@
                             <outlet property="delegate" destination="bdV-JL-8hy" id="T1O-sN-sEv"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="wMS-l2-I55"/>
+                    <connections>
+                        <segue destination="H6Q-4p-COZ" kind="show" identifier="openImage" id="z6z-Fs-1MP"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsR-dh-U67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,14 +94,14 @@
             <objects>
                 <viewController id="H6Q-4p-COZ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MzH-uN-I5o">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="HVj-Fr-LZJ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qVM-9X-bIA">
-                                <rect key="frame" x="178" y="420" width="37" height="37"/>
+                                <rect key="frame" x="178" y="402.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
@@ -109,6 +116,7 @@
                             <constraint firstItem="buC-WE-cJ1" firstAttribute="bottom" secondItem="HVj-Fr-LZJ" secondAttribute="bottom" id="vQn-3l-cQJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7Xr-tO-hi9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqt-YX-5Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

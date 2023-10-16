@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class NewPostVC: UIViewController {
     
@@ -38,7 +39,7 @@ class NewPostVC: UIViewController {
             request.httpBody = httpBody
             
             URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                print(response)
+                print(response as Any)
                 if let data = data {
                     let json = JSON(data)
                     print(json)
@@ -56,5 +57,31 @@ class NewPostVC: UIViewController {
     }
     
     @IBAction func postAlamofire() {
+        if let userId = user?.id,
+           let title = titleTF.text,
+           let body = bodyTV.text,
+           let url = ApiConstants.postsURL {
+            
+            let parameters: Parameters = ["userId": userId,
+                                          "title": title,
+                                          "body": body]
+            AF.request(url, method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { [weak self] response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                    self?.navigationController?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }
