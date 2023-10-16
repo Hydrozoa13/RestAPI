@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Posts ListTVC-->
+        <!--Posts-->
         <scene sceneID="wNi-QH-IoJ">
             <objects>
                 <tableViewController storyboardIdentifier="PostsListTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U3a-c0-Ir8" customClass="PostsListTVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,6 +50,14 @@
                             <outlet property="delegate" destination="U3a-c0-Ir8" id="7XK-wt-LnA"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Posts" id="sTj-Tm-WcM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="NGw-0e-jm1">
+                            <color key="tintColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addPostAction:" destination="U3a-c0-Ir8" id="xk5-pe-fL8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="TjW-OG-LOy" kind="show" identifier="createNewPost" id="Etg-AP-1Vt"/>
                         <segue destination="Ilz-SO-11j" kind="show" identifier="showComments" id="yJ3-Mx-Ole"/>
@@ -57,18 +65,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1NQ-Em-qRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="83"/>
+            <point key="canvasLocation" x="912.55813953488371" y="82.403433476394852"/>
         </scene>
-        <!--View Controller-->
+        <!--New PostVC-->
         <scene sceneID="kzt-X5-ihk">
             <objects>
-                <viewController id="TjW-OG-LOy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPostVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TjW-OG-LOy" customClass="NewPostVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3qm-x2-C2C">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ud4-PK-zeO">
-                                <rect key="frame" x="25" y="50" width="380" height="325.66666666666663"/>
+                                <rect key="frame" x="25" y="50" width="380" height="325.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1R4-MV-HTT">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
@@ -97,6 +105,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="postURLSession" destination="TjW-OG-LOy" eventType="touchUpInside" id="bcl-YE-fa5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cf-5W-ddE">
                                         <rect key="frame" x="0.0" y="69" width="380" height="44"/>
@@ -106,6 +117,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="postAlamofire" destination="TjW-OG-LOy" eventType="touchUpInside" id="qdb-Ld-TbF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -123,10 +137,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HMz-md-FU0"/>
+                    <connections>
+                        <outlet property="bodyTV" destination="jfR-O9-qSS" id="mTB-H5-n6V"/>
+                        <outlet property="titleTF" destination="1R4-MV-HTT" id="2hq-cS-OpL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ht-0W-TM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="-198"/>
+            <point key="canvasLocation" x="1699.5348837209301" y="-198.28326180257511"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Tri-H0-WDR">
@@ -174,7 +192,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unz-Aa-DWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="453"/>
+            <point key="canvasLocation" x="1699.5348837209301" y="452.57510729613739"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,8 @@
 		D1163D492ADA96B20038A413 /* ToDoFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1163D482ADA96B20038A413 /* ToDoFlow.storyboard */; };
 		D1163D4E2ADA9A2B0038A413 /* PostsListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D4D2ADA9A2B0038A413 /* PostsListTVC.swift */; };
 		D1163D502ADBE2200038A413 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D4F2ADBE2200038A413 /* PostModel.swift */; };
+		D1163D532ADD9B540038A413 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D522ADD9B540038A413 /* NetworkService.swift */; };
+		D1163D552ADD9EE70038A413 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D542ADD9EE70038A413 /* NewPostVC.swift */; };
 		D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */; };
 		D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */; };
 		D1EFD8AD2AD016D9009B0044 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EFD8AB2AD016D9009B0044 /* MainFlow.storyboard */; };
@@ -39,6 +41,8 @@
 		D1163D482ADA96B20038A413 /* ToDoFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoFlow.storyboard; sourceTree = "<group>"; };
 		D1163D4D2ADA9A2B0038A413 /* PostsListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListTVC.swift; sourceTree = "<group>"; };
 		D1163D4F2ADBE2200038A413 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		D1163D522ADD9B540038A413 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D1163D542ADD9EE70038A413 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
 		D1EFD8A22AD016D9009B0044 /* RestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +100,17 @@
 			isa = PBXGroup;
 			children = (
 				D1163D4D2ADA9A2B0038A413 /* PostsListTVC.swift */,
+				D1163D542ADD9EE70038A413 /* NewPostVC.swift */,
 			);
 			path = PostsFlow;
+			sourceTree = "<group>";
+		};
+		D1163D512ADD9B220038A413 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D1163D522ADD9B540038A413 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D1EFD8992AD016D9009B0044 = {
@@ -119,6 +132,7 @@
 		D1EFD8A42AD016D9009B0044 /* RestAPI */ = {
 			isa = PBXGroup;
 			children = (
+				D1163D512ADD9B220038A413 /* Services */,
 				D1EFD8BE2AD01F28009B0044 /* Extensions */,
 				D1EFD8BC2AD01F08009B0044 /* Models */,
 				D1EFD8BA2AD01741009B0044 /* Views */,
@@ -282,6 +296,7 @@
 				D10A2A852AD6D33300965394 /* ApiConstants.swift in Sources */,
 				D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */,
 				D1EFD8C02AD01F71009B0044 /* UserActions.swift in Sources */,
+				D1163D552ADD9EE70038A413 /* NewPostVC.swift in Sources */,
 				D1163D502ADBE2200038A413 /* PostModel.swift in Sources */,
 				D1EFD8CA2AD02CA6009B0044 /* ImageVC.swift in Sources */,
 				D10A2A882AD7B6AF00965394 /* UserDetailVC.swift in Sources */,
@@ -289,6 +304,7 @@
 				D1EFD8C22AD01FD5009B0044 /* CollectionVC.swift in Sources */,
 				D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */,
 				D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */,
+				D1163D532ADD9B540038A413 /* NetworkService.swift in Sources */,
 				D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */,
 				D10A2A832AD68F3200965394 /* UserModel.swift in Sources */,
 				D10A2A812AD68EC400965394 /* UsersListTVC.swift in Sources */,

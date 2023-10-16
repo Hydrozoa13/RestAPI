@@ -11,17 +11,16 @@ class PostsListTVC: UITableViewController {
     
     var user: User?
     var posts: [Post] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Posts"
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchPosts()
     }
-
+    
+    @IBAction func addPostAction(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "createNewPost", sender: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { posts.count }
@@ -33,27 +32,18 @@ class PostsListTVC: UITableViewController {
         cell.detailTextLabel?.text = post.body
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { true }
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let postId = posts[indexPath.row].id
+            NetworkService.deletePost(postId: postId) { [weak self] in
+                self?.posts.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -70,15 +60,13 @@ class PostsListTVC: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? NewPostVC {
+            vc.user = user
+        }
     }
-    */
     
     private func fetchPosts() {
         let userId = user?.id.description ?? ""
