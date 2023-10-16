@@ -20,6 +20,7 @@
 		D1163D552ADD9EE70038A413 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D542ADD9EE70038A413 /* NewPostVC.swift */; };
 		D1163D582ADDAE800038A413 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D1163D572ADDAE800038A413 /* SwiftyJSON */; };
 		D1163D5B2ADDB27C0038A413 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D1163D5A2ADDB27C0038A413 /* Alamofire */; };
+		D1163D5E2ADDC5BD0038A413 /* NewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D5D2ADDC5BD0038A413 /* NewUserVC.swift */; };
 		D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */; };
 		D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */; };
 		D1EFD8AD2AD016D9009B0044 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EFD8AB2AD016D9009B0044 /* MainFlow.storyboard */; };
@@ -45,6 +46,7 @@
 		D1163D4F2ADBE2200038A413 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		D1163D522ADD9B540038A413 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D1163D542ADD9EE70038A413 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		D1163D5D2ADDC5BD0038A413 /* NewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserVC.swift; sourceTree = "<group>"; };
 		D1EFD8A22AD016D9009B0044 /* RestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D1EFD8C72AD02C6E009B0044 /* ActionsCollection */,
 				D1EFD8C82AD02C82009B0044 /* ImageView */,
 				D10A2A7F2AD68EA400965394 /* UsersList */,
+				D1163D5C2ADDC5A30038A413 /* NewUser */,
 				D10A2A862AD7B68D00965394 /* UserDetail */,
 			);
 			path = MainFlow;
@@ -115,6 +118,14 @@
 				D1163D522ADD9B540038A413 /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D1163D5C2ADDC5A30038A413 /* NewUser */ = {
+			isa = PBXGroup;
+			children = (
+				D1163D5D2ADDC5BD0038A413 /* NewUserVC.swift */,
+			);
+			path = NewUser;
 			sourceTree = "<group>";
 		};
 		D1EFD8992AD016D9009B0044 = {
@@ -305,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1163D5E2ADDC5BD0038A413 /* NewUserVC.swift in Sources */,
 				D10A2A852AD6D33300965394 /* ApiConstants.swift in Sources */,
 				D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */,
 				D1EFD8C02AD01F71009B0044 /* UserActions.swift in Sources */,

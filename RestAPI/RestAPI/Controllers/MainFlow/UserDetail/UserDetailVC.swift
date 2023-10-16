@@ -34,12 +34,12 @@ class UserDetailVC: UIViewController {
     }
     
     private func setupUI() {
-        navigationItem.title = user?.name
-        usernameLbl.text = user?.username
-        emailLbl.text = user?.email
-        phoneLbl.text = user?.phone
-        websiteLbl.text = user?.website
-        companyLbl.text = user?.company?.name
+        navigationItem.title = user?.name ?? "Unknown"
+        usernameLbl.text = user?.username ?? "Unknown"
+        emailLbl.text = user?.email ?? "Unknown"
+        phoneLbl.text = user?.phone ?? "Unknown"
+        websiteLbl.text = user?.website ?? "Unknown"
+        companyLbl.text = user?.company?.name ?? "Unknown"
         if let city = user?.address?.city,
            let street = user?.address?.street,
            let suite = user?.address?.suite,
