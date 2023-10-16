@@ -80,4 +80,37 @@ class NetworkService {
             }
         }
     }
+    
+    static func postNewUser(name: String,
+                            username: String,
+                            email: String,
+                            phone: String,
+                            website: String,
+                            navC: UINavigationController?) {
+        if let url = ApiConstants.usersURL {
+            
+            let parameters: Parameters = ["name": name,
+                                          "username": username,
+                                          "email": email,
+                                          "phone": phone,
+                                          "website": website]
+            AF.request(url, method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                    navC?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
 }
