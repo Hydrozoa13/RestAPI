@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NewPostVC: UIViewController {
     
@@ -38,9 +39,20 @@ class NewPostVC: UIViewController {
             
             URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
                 print(response)
+                if let data = data {
+                    let json = JSON(data)
+                    print(json)
+                }
+                
+                if let error = error {
+                    print(error)
+                }
+                
+                DispatchQueue.main.async {
+                    self?.navigationController?.popViewController(animated: true)
+                }
             }.resume()
         }
-        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func postAlamofire() {
