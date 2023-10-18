@@ -26,24 +26,28 @@ class UserDetailVC: UIViewController {
     
     @IBAction func openMapAction() { setCoordinatesOnMap() }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func openPostsAction() {
+        let storyboard = UIStoryboard(name: "PostsFlow", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "PostsListTVC") as? PostsListTVC else { return }
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
     }
-    */
     
     private func setupUI() {
-        navigationItem.title = user?.name
-        usernameLbl.text = user?.username
-        emailLbl.text = user?.email
-        phoneLbl.text = user?.phone
-        websiteLbl.text = user?.website
-        addressLbl.text = user?.address?.zipcode
+        navigationItem.title = user?.name ?? "Unknown"
+        usernameLbl.text = user?.username ?? "Unknown"
+        emailLbl.text = user?.email ?? "Unknown"
+        phoneLbl.text = user?.phone ?? "Unknown"
+        websiteLbl.text = user?.website ?? "Unknown"
         companyLbl.text = user?.company?.name ?? "Unknown"
+        if let city = user?.address?.city,
+           let street = user?.address?.street,
+           let suite = user?.address?.suite,
+           let zipcode = user?.address?.zipcode {
+            addressLbl.text = "\(city)\n\(street)\n\(suite)\n\(zipcode)"
+        } else {
+            addressLbl.text = "Unknown"
+        }
     }
     
     private func setCoordinatesOnMap() {
