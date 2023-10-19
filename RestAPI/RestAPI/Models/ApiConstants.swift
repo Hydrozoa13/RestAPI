@@ -15,4 +15,7 @@ struct ApiConstants {
     
     static let postsPath = serverPath + "posts"
     static let postsURL = URL(string: postsPath)
+    
+    static let commentsPath = serverPath + "comments"
+    static let commentsURL = URL(string: commentsPath)
 }

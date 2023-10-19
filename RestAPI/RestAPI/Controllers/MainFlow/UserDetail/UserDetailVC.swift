@@ -33,6 +33,8 @@ class UserDetailVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    //MARK: - Private functions
+    
     private func setupUI() {
         navigationItem.title = user?.name ?? "Unknown"
         usernameLbl.text = user?.username ?? "Unknown"

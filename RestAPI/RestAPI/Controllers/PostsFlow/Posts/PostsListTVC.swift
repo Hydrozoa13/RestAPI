@@ -50,8 +50,13 @@ class PostsListTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? NewPostVC {
             vc.user = user
+        } else if let index = tableView.indexPathForSelectedRow,
+                  let vc = segue.destination as? CommentsTVC {
+            vc.post = posts[index.row]
         }
     }
+    
+    // MARK: - Private functions
     
     private func fetchPosts() {
         let userId = user?.id.description ?? ""
