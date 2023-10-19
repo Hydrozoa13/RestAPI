@@ -228,4 +228,10 @@ class NetworkService {
             }
         }
     }
+    
+    static func deleteAlbum(albumId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.albumsPath)/\(albumId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
+    }
 }
