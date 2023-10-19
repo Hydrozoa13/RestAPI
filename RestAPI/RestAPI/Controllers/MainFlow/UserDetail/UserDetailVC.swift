@@ -33,6 +33,14 @@ class UserDetailVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openToDoList() {
+        let storyboard = UIStoryboard(name: "ToDoFlow", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ToDoListTVC") as? ToDoListTVC else { return }
+        vc.userId = user?.id
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     //MARK: - Private functions
     
     private func setupUI() {
