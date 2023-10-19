@@ -11,12 +11,6 @@ import UIKit
 
 class NetworkService {
     
-    static func deletePost(postId: Int, callback: @escaping () -> ()) {
-        let urlPath = "\(ApiConstants.postsPath)/\(postId)"
-        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
-        .response { response in callback() }
-    }
-    
     static func postURLSession(for user: User?, title: String?, body: String?, navC: UINavigationController?) {
            if let userId = user?.id,
            let title = title,
@@ -79,6 +73,12 @@ class NetworkService {
                 }
             }
         }
+    }
+    
+    static func deletePost(postId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.postsPath)/\(postId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
     }
     
     static func postNewUser(name: String,
@@ -149,5 +149,11 @@ class NetworkService {
                 }
             }
         }
+    }
+    
+    static func deleteComment(commentId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.commentsPath)/\(commentId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
     }
 }
