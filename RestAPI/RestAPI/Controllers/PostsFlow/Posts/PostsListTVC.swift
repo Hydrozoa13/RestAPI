@@ -52,7 +52,7 @@ class PostsListTVC: UITableViewController {
             vc.user = user
         } else if let index = tableView.indexPathForSelectedRow,
                   let vc = segue.destination as? CommentsTVC {
-            vc.post = posts[index.row]
+            vc.postId = posts[index.row].id
         }
     }
     

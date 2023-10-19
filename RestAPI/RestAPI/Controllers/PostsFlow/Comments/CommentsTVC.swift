@@ -9,13 +9,12 @@ import UIKit
 
 class CommentsTVC: UITableViewController {
     
-    var post: Post?
+    var postId: Int?
     var comments: [Comment] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchComments()
-        navigationItem.title = "Comments"
     }
 
     // MARK: - Table view data source
@@ -67,21 +66,18 @@ class CommentsTVC: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? NewCommentVC {
+            vc.postId = postId
+        }
     }
-    */
     
     //MARK: - Private functions
     
     private func fetchComments() {
-        let postId = post?.id.description ?? ""
-        let urlPath = "\(ApiConstants.commentsPath)?postId=\(postId)"
+        let urlPath = "\(ApiConstants.commentsPath)?postId=\(postId ?? 0)"
         guard let url = URL(string: urlPath) else { return }
         URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
             guard let self,
