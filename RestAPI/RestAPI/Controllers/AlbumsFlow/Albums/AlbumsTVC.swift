@@ -11,9 +11,9 @@ class AlbumsTVC: UITableViewController {
     
     var userId: Int?
     var albums: [Album] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchAlbums()
     }
 
@@ -56,6 +56,8 @@ class AlbumsTVC: UITableViewController {
         if let index = tableView.indexPathForSelectedRow,
            let vc = segue.destination as? PhotosCVC {
             vc.albumId = albums[index.row].id
+        } else if let vc = segue.destination as? NewAlbumVC {
+            vc.userId = userId
         }
     }
     
