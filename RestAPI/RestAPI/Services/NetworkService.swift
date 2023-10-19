@@ -190,4 +190,15 @@ class NetworkService {
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
         .response { response in callback() }
     }
+    
+    static func getThumbnail(thumbnailUrl: String,
+                             callback: @escaping (_ result: UIImage?,
+                                                  _ error: AFError?) -> ()) {
+        AF.request(thumbnailUrl).responseImage { response in
+            switch response.result {
+                case .success(let image): callback (image, nil)
+                case .failure(let error): callback (nil, error)
+            }
+        }
+    }
 }

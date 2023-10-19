@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="-219" y="-33"/>
         </scene>
-        <!--New Comment-->
+        <!--New ToDo-->
         <scene sceneID="cLD-4S-75y">
             <objects>
                 <viewController id="xr9-Qp-ERY" customClass="NewToDo" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                             <constraint firstItem="qe6-K4-4tQ" firstAttribute="bottom" secondItem="XTH-34-dBT" secondAttribute="bottom" constant="120" id="dTB-ZX-xQc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Comment" id="rl0-ja-QAf"/>
+                    <navigationItem key="navigationItem" title="New ToDo" id="rl0-ja-QAf"/>
                     <connections>
                         <outlet property="toDoTF" destination="s3h-rE-EMj" id="WiO-KN-2JM"/>
                     </connections>
