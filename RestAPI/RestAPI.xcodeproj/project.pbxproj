@@ -214,8 +214,8 @@
 		D19C8C5C2AE12977001701E6 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				D19C8C5D2AE129A8001701E6 /* PhotosCVC.swift */,
 				D19C8C5F2AE12D4E001701E6 /* Cell */,
+				D19C8C5D2AE129A8001701E6 /* PhotosCVC.swift */,
 				D19C8C672AE142C3001701E6 /* DetailPhotoVC.swift */,
 			);
 			path = Photos;

@@ -17,6 +17,7 @@ class DetailPhotoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPhoto()
+        navigationItem.title = photo?.title
     }
     
     private func fetchPhoto() {
