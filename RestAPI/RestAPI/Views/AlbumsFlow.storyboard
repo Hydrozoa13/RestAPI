@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1643.5114503816794" y="24.647887323943664"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail PhotoVC-->
         <scene sceneID="P0Q-gS-FhI">
             <objects>
-                <viewController id="H6Q-4p-COZ" sceneMemberID="viewController">
+                <viewController id="H6Q-4p-COZ" customClass="DetailPhotoVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MzH-uN-I5o">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +109,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Xr-tO-hi9"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qVM-9X-bIA" id="P4m-iZ-cdZ"/>
+                        <outlet property="imageView" destination="HVj-Fr-LZJ" id="DLy-Hr-4H6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqt-YX-5Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
