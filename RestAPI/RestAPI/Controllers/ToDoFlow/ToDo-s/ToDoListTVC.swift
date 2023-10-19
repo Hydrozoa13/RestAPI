@@ -12,6 +12,11 @@ class ToDoListTVC: UITableViewController {
     var userId: Int?
     var toDos: [ToDo] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UINib(nibName: "ToDoCell", bundle: nil), forCellReuseIdentifier: "Cell")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchToDos()
@@ -24,10 +29,13 @@ class ToDoListTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ToDoCell
         let toDo = toDos[indexPath.row]
-        cell.textLabel?.text = toDo.title
-        cell.detailTextLabel?.text = String(toDo.completed)
+        cell.titleLbl.text = toDo.title
+        switch toDo.completed {
+            case true: cell.segmentedControl.selectedSegmentIndex = 1
+            case false: cell.segmentedControl.selectedSegmentIndex = 0
+        }
         return cell
     }
     

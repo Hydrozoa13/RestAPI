@@ -36,6 +36,8 @@
 		D19C8C662AE1321A001701E6 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = D19C8C652AE1321A001701E6 /* AlamofireImage */; };
 		D19C8C682AE142C3001701E6 /* DetailPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C672AE142C3001701E6 /* DetailPhotoVC.swift */; };
 		D19C8C6A2AE148B8001701E6 /* NewAlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C692AE148B8001701E6 /* NewAlbumVC.swift */; };
+		D19C8C6E2AE14ED9001701E6 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C6C2AE14ED9001701E6 /* ToDoCell.swift */; };
+		D19C8C6F2AE14ED9001701E6 /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19C8C6D2AE14ED9001701E6 /* ToDoCell.xib */; };
 		D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */; };
 		D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */; };
 		D1EFD8AD2AD016D9009B0044 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EFD8AB2AD016D9009B0044 /* MainFlow.storyboard */; };
@@ -76,6 +78,8 @@
 		D19C8C612AE12D6F001701E6 /* PhotosCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCVCell.xib; sourceTree = "<group>"; };
 		D19C8C672AE142C3001701E6 /* DetailPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoVC.swift; sourceTree = "<group>"; };
 		D19C8C692AE148B8001701E6 /* NewAlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlbumVC.swift; sourceTree = "<group>"; };
+		D19C8C6C2AE14ED9001701E6 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		D19C8C6D2AE14ED9001701E6 /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
 		D1EFD8A22AD016D9009B0044 /* RestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		D19C8C4C2AE10B6C001701E6 /* ToDoFlow */ = {
 			isa = PBXGroup;
 			children = (
+				D19C8C6B2AE14EBB001701E6 /* ToDoCell */,
 				D19C8C4D2AE10B94001701E6 /* ToDo-s */,
 			);
 			path = ToDoFlow;
@@ -228,6 +233,15 @@
 				D19C8C612AE12D6F001701E6 /* PhotosCVCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D19C8C6B2AE14EBB001701E6 /* ToDoCell */ = {
+			isa = PBXGroup;
+			children = (
+				D19C8C6C2AE14ED9001701E6 /* ToDoCell.swift */,
+				D19C8C6D2AE14ED9001701E6 /* ToDoCell.xib */,
+			);
+			path = ToDoCell;
 			sourceTree = "<group>";
 		};
 		D1EFD8992AD016D9009B0044 = {
@@ -413,6 +427,7 @@
 				D1163D492ADA96B20038A413 /* ToDoFlow.storyboard in Resources */,
 				D1163D452ADA967E0038A413 /* PostsFlow.storyboard in Resources */,
 				D1EFD8B22AD016DA009B0044 /* LaunchScreen.storyboard in Resources */,
+				D19C8C6F2AE14ED9001701E6 /* ToDoCell.xib in Resources */,
 				D1EFD8AF2AD016DA009B0044 /* Assets.xcassets in Resources */,
 				D1163D472ADA96920038A413 /* AlbumsFlow.storyboard in Resources */,
 				D19C8C632AE12D6F001701E6 /* PhotosCVCell.xib in Resources */,
@@ -446,6 +461,7 @@
 				D1EFD8CC2AD03B00009B0044 /* ImagesURL.swift in Sources */,
 				D1EFD8C22AD01FD5009B0044 /* CollectionVC.swift in Sources */,
 				D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */,
+				D19C8C6E2AE14ED9001701E6 /* ToDoCell.swift in Sources */,
 				D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */,
 				D19C8C682AE142C3001701E6 /* DetailPhotoVC.swift in Sources */,
 				D1163D532ADD9B540038A413 /* NetworkService.swift in Sources */,
