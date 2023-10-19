@@ -12,7 +12,7 @@
 		D10A2A852AD6D33300965394 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A2A842AD6D33300965394 /* ApiConstants.swift */; };
 		D10A2A882AD7B6AF00965394 /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A2A872AD7B6AF00965394 /* UserDetailVC.swift */; };
 		D1163D452ADA967E0038A413 /* PostsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1163D442ADA967E0038A413 /* PostsFlow.storyboard */; };
-		D1163D472ADA96920038A413 /* AlbomsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1163D462ADA96920038A413 /* AlbomsFlow.storyboard */; };
+		D1163D472ADA96920038A413 /* AlbumsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1163D462ADA96920038A413 /* AlbumsFlow.storyboard */; };
 		D1163D492ADA96B20038A413 /* ToDoFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1163D482ADA96B20038A413 /* ToDoFlow.storyboard */; };
 		D1163D4E2ADA9A2B0038A413 /* PostsListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D4D2ADA9A2B0038A413 /* PostsListTVC.swift */; };
 		D1163D502ADBE2200038A413 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1163D4F2ADBE2200038A413 /* PostModel.swift */; };
@@ -27,6 +27,9 @@
 		D19C8C4F2AE10DCF001701E6 /* ToDoListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C4E2AE10DCF001701E6 /* ToDoListTVC.swift */; };
 		D19C8C512AE10F57001701E6 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C502AE10F57001701E6 /* ToDoModel.swift */; };
 		D19C8C532AE1155C001701E6 /* NewToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C522AE1155B001701E6 /* NewToDo.swift */; };
+		D19C8C572AE11E4D001701E6 /* AlbumsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C562AE11E4D001701E6 /* AlbumsTVC.swift */; };
+		D19C8C592AE11EC0001701E6 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C582AE11EC0001701E6 /* AlbumModel.swift */; };
+		D19C8C5B2AE11F4D001701E6 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C5A2AE11F4D001701E6 /* PhotoModel.swift */; };
 		D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */; };
 		D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */; };
 		D1EFD8AD2AD016D9009B0044 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EFD8AB2AD016D9009B0044 /* MainFlow.storyboard */; };
@@ -46,7 +49,7 @@
 		D10A2A842AD6D33300965394 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		D10A2A872AD7B6AF00965394 /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
 		D1163D442ADA967E0038A413 /* PostsFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostsFlow.storyboard; sourceTree = "<group>"; };
-		D1163D462ADA96920038A413 /* AlbomsFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbomsFlow.storyboard; sourceTree = "<group>"; };
+		D1163D462ADA96920038A413 /* AlbumsFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumsFlow.storyboard; sourceTree = "<group>"; };
 		D1163D482ADA96B20038A413 /* ToDoFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoFlow.storyboard; sourceTree = "<group>"; };
 		D1163D4D2ADA9A2B0038A413 /* PostsListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListTVC.swift; sourceTree = "<group>"; };
 		D1163D4F2ADBE2200038A413 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -59,6 +62,9 @@
 		D19C8C4E2AE10DCF001701E6 /* ToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTVC.swift; sourceTree = "<group>"; };
 		D19C8C502AE10F57001701E6 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		D19C8C522AE1155B001701E6 /* NewToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDo.swift; sourceTree = "<group>"; };
+		D19C8C562AE11E4D001701E6 /* AlbumsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTVC.swift; sourceTree = "<group>"; };
+		D19C8C582AE11EC0001701E6 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		D19C8C5A2AE11F4D001701E6 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		D1EFD8A22AD016D9009B0044 /* RestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +181,22 @@
 			path = "ToDo-s";
 			sourceTree = "<group>";
 		};
+		D19C8C542AE11E13001701E6 /* AlbumsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				D19C8C552AE11E32001701E6 /* Albums */,
+			);
+			path = AlbumsFlow;
+			sourceTree = "<group>";
+		};
+		D19C8C552AE11E32001701E6 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				D19C8C562AE11E4D001701E6 /* AlbumsTVC.swift */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
 		D1EFD8992AD016D9009B0044 = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +242,7 @@
 			children = (
 				D1EFD8AB2AD016D9009B0044 /* MainFlow.storyboard */,
 				D1163D442ADA967E0038A413 /* PostsFlow.storyboard */,
-				D1163D462ADA96920038A413 /* AlbomsFlow.storyboard */,
+				D1163D462ADA96920038A413 /* AlbumsFlow.storyboard */,
 				D1163D482ADA96B20038A413 /* ToDoFlow.storyboard */,
 				D1EFD8B02AD016DA009B0044 /* LaunchScreen.storyboard */,
 			);
@@ -244,6 +266,8 @@
 				D10A2A822AD68F3200965394 /* UserModel.swift */,
 				D1163D4F2ADBE2200038A413 /* PostModel.swift */,
 				D19C8C432AE0E9FB001701E6 /* CommentModel.swift */,
+				D19C8C582AE11EC0001701E6 /* AlbumModel.swift */,
+				D19C8C5A2AE11F4D001701E6 /* PhotoModel.swift */,
 				D19C8C502AE10F57001701E6 /* ToDoModel.swift */,
 			);
 			path = Models;
@@ -254,6 +278,7 @@
 			children = (
 				D1163D4A2ADA98C30038A413 /* MainFlow */,
 				D1163D4C2ADA98F40038A413 /* PostsFlow */,
+				D19C8C542AE11E13001701E6 /* AlbumsFlow */,
 				D19C8C4C2AE10B6C001701E6 /* ToDoFlow */,
 			);
 			path = Controllers;
@@ -354,7 +379,7 @@
 				D1163D452ADA967E0038A413 /* PostsFlow.storyboard in Resources */,
 				D1EFD8B22AD016DA009B0044 /* LaunchScreen.storyboard in Resources */,
 				D1EFD8AF2AD016DA009B0044 /* Assets.xcassets in Resources */,
-				D1163D472ADA96920038A413 /* AlbomsFlow.storyboard in Resources */,
+				D1163D472ADA96920038A413 /* AlbumsFlow.storyboard in Resources */,
 				D1EFD8AD2AD016D9009B0044 /* MainFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +393,7 @@
 			files = (
 				D1163D5E2ADDC5BD0038A413 /* NewUserVC.swift in Sources */,
 				D10A2A852AD6D33300965394 /* ApiConstants.swift in Sources */,
+				D19C8C592AE11EC0001701E6 /* AlbumModel.swift in Sources */,
 				D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */,
 				D19C8C512AE10F57001701E6 /* ToDoModel.swift in Sources */,
 				D1EFD8C02AD01F71009B0044 /* UserActions.swift in Sources */,
@@ -387,7 +413,9 @@
 				D19C8C532AE1155C001701E6 /* NewToDo.swift in Sources */,
 				D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */,
 				D10A2A832AD68F3200965394 /* UserModel.swift in Sources */,
+				D19C8C572AE11E4D001701E6 /* AlbumsTVC.swift in Sources */,
 				D10A2A812AD68EC400965394 /* UsersListTVC.swift in Sources */,
+				D19C8C5B2AE11F4D001701E6 /* PhotoModel.swift in Sources */,
 				D1163D4E2ADA9A2B0038A413 /* PostsListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

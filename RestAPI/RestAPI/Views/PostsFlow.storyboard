@@ -42,7 +42,7 @@
                                     <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="Ilz-SO-11j" kind="show" id="Jau-Cb-8VG"/>
                                 </connections>

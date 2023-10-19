@@ -33,6 +33,13 @@ class UserDetailVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openAlbums() {
+        let storyboard = UIStoryboard(name: "AlbumsFlow", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "AlbumsTVC") as? AlbumsTVC else { return }
+        vc.userId = user?.id
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func openToDoList() {
         let storyboard = UIStoryboard(name: "ToDoFlow", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "ToDoListTVC") as? ToDoListTVC else { return }
