@@ -25,7 +25,11 @@ class NewCommentVC: UIViewController {
            let email = emailTF.text,
            let title = titleTF.text,
            let body = bodyTV.text {
-            NetworkService.postNewComment(postId: postId, email: email, title: title, body: body, navC: navigationController)
+            NetworkService.postNewComment(postId: postId,
+                                          email: email,
+                                          title: title,
+                                          body: body,
+                                          navC: navigationController)
         }
     }
 }

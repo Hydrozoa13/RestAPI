@@ -26,6 +26,7 @@
 		D19C8C4A2AE0FDF0001701E6 /* NewCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C492AE0FDF0001701E6 /* NewCommentVC.swift */; };
 		D19C8C4F2AE10DCF001701E6 /* ToDoListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C4E2AE10DCF001701E6 /* ToDoListTVC.swift */; };
 		D19C8C512AE10F57001701E6 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C502AE10F57001701E6 /* ToDoModel.swift */; };
+		D19C8C532AE1155C001701E6 /* NewToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C8C522AE1155B001701E6 /* NewToDo.swift */; };
 		D1EFD8A62AD016D9009B0044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */; };
 		D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */; };
 		D1EFD8AD2AD016D9009B0044 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EFD8AB2AD016D9009B0044 /* MainFlow.storyboard */; };
@@ -57,6 +58,7 @@
 		D19C8C492AE0FDF0001701E6 /* NewCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentVC.swift; sourceTree = "<group>"; };
 		D19C8C4E2AE10DCF001701E6 /* ToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTVC.swift; sourceTree = "<group>"; };
 		D19C8C502AE10F57001701E6 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		D19C8C522AE1155B001701E6 /* NewToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDo.swift; sourceTree = "<group>"; };
 		D1EFD8A22AD016D9009B0044 /* RestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EFD8A52AD016D9009B0044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EFD8A72AD016D9009B0044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				D19C8C4E2AE10DCF001701E6 /* ToDoListTVC.swift */,
+				D19C8C522AE1155B001701E6 /* NewToDo.swift */,
 			);
 			path = "ToDo-s";
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D1EFD8C42AD02203009B0044 /* ActionsCVCell.swift in Sources */,
 				D1EFD8C62AD0264E009B0044 /* CollectionVCExt.swift in Sources */,
 				D1163D532ADD9B540038A413 /* NetworkService.swift in Sources */,
+				D19C8C532AE1155C001701E6 /* NewToDo.swift in Sources */,
 				D1EFD8A82AD016D9009B0044 /* SceneDelegate.swift in Sources */,
 				D10A2A832AD68F3200965394 /* UserModel.swift in Sources */,
 				D10A2A812AD68EC400965394 /* UsersListTVC.swift in Sources */,

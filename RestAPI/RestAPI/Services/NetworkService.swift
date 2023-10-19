@@ -156,4 +156,32 @@ class NetworkService {
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
         .response { response in callback() }
     }
+    
+    static func postNewToDo(userId: Int,
+                            title: String,
+                            navC: UINavigationController?) {
+        if let url = ApiConstants.toDosURL {
+            
+            let parameters: Parameters = ["userId": userId,
+                                          "title": title,
+                                          "completed": false]
+            AF.request(url, method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                    navC?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
 }
