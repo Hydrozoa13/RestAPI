@@ -42,7 +42,10 @@
                                     <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <segue destination="Ilz-SO-11j" kind="show" id="Jau-Cb-8VG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -60,7 +63,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="TjW-OG-LOy" kind="show" identifier="createNewPost" id="Etg-AP-1Vt"/>
-                        <segue destination="Ilz-SO-11j" kind="show" identifier="showComments" id="yJ3-Mx-Ole"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1NQ-Em-qRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -144,12 +146,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ht-0W-TM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699.5348837209301" y="-198.28326180257511"/>
+            <point key="canvasLocation" x="1700" y="-216"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Comments-->
         <scene sceneID="Tri-H0-WDR">
             <objects>
-                <tableViewController id="Ilz-SO-11j" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CommentsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ilz-SO-11j" customClass="CommentsTVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7fl-EZ-lvW">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,16 +166,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C4V-lO-nPW">
-                                            <rect key="frame" x="20.000000000000004" y="16.666666666666668" width="46.333333333333336" height="30"/>
+                                            <rect key="frame" x="20.000000000000004" y="15.666666666666668" width="46.333333333333336" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6td-hq-cUS">
-                                            <rect key="frame" x="19.999999999999996" y="51" width="52.666666666666664" height="18"/>
+                                            <rect key="frame" x="20.000000000000004" y="50" width="58.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -188,11 +190,93 @@
                             <outlet property="delegate" destination="Ilz-SO-11j" id="keK-55-DNe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oVc-lF-axG"/>
+                    <navigationItem key="navigationItem" title="Comments" id="oVc-lF-axG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z02-B9-inu">
+                            <color key="tintColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="jWW-bd-gcO" kind="show" id="JeE-md-n5C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unz-Aa-DWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699.5348837209301" y="452.57510729613739"/>
+            <point key="canvasLocation" x="1700" y="440"/>
+        </scene>
+        <!--New Comment-->
+        <scene sceneID="sKv-d0-vjQ">
+            <objects>
+                <viewController id="jWW-bd-gcO" customClass="NewCommentVC" customModule="RestAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a61-XA-4Nz">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wpb-5c-5zo">
+                                <rect key="frame" x="25" y="50" width="380" height="374.66666666666669"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQP-Fk-Vps">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
+                                        <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHY-bw-mbR">
+                                        <rect key="frame" x="0.0" y="49" width="380" height="34"/>
+                                        <color key="backgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CmS-1T-uKi">
+                                        <rect key="frame" x="0.0" y="98" width="380" height="276.66666666666669"/>
+                                        <color key="backgroundColor" red="0.14901961389999999" green="0.22745099660000001" blue="0.36470589040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="T7u-tU-6oa">
+                                <rect key="frame" x="25" y="574.66666666666663" width="380" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-f9-9hi">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save new comment">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.93725490570000003" green="0.53725492949999998" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveComment" destination="jWW-bd-gcO" eventType="touchUpInside" id="4qJ-qy-Pxf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OBD-wO-0W3"/>
+                        <color key="backgroundColor" red="0.15294116739999999" green="0.1764705926" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="CmS-1T-uKi" firstAttribute="height" secondItem="a61-XA-4Nz" secondAttribute="height" multiplier="0.3" id="6GU-Zo-t9w"/>
+                            <constraint firstItem="Wpb-5c-5zo" firstAttribute="leading" secondItem="OBD-wO-0W3" secondAttribute="leading" constant="25" id="GIJ-4d-aTX"/>
+                            <constraint firstItem="Wpb-5c-5zo" firstAttribute="top" secondItem="OBD-wO-0W3" secondAttribute="top" constant="50" id="NoX-bk-GkT"/>
+                            <constraint firstItem="OBD-wO-0W3" firstAttribute="trailing" secondItem="Wpb-5c-5zo" secondAttribute="trailing" constant="25" id="TMM-3i-XGS"/>
+                            <constraint firstItem="T7u-tU-6oa" firstAttribute="leading" secondItem="OBD-wO-0W3" secondAttribute="leading" constant="25" id="WVd-K6-SQo"/>
+                            <constraint firstItem="OBD-wO-0W3" firstAttribute="trailing" secondItem="T7u-tU-6oa" secondAttribute="trailing" constant="25" id="vJ5-oy-L6v"/>
+                            <constraint firstItem="T7u-tU-6oa" firstAttribute="top" secondItem="Wpb-5c-5zo" secondAttribute="bottom" constant="150" id="x3M-3F-ATP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Comment" id="o05-5p-Lj5"/>
+                    <connections>
+                        <outlet property="bodyTV" destination="CmS-1T-uKi" id="lN6-Y1-Idr"/>
+                        <outlet property="emailTF" destination="wQP-Fk-Vps" id="Nvg-l4-eC0"/>
+                        <outlet property="titleTF" destination="xHY-bw-mbR" id="52w-nV-G8k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kf4-9o-cxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="440"/>
         </scene>
     </scenes>
 </document>

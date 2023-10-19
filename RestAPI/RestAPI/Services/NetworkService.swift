@@ -11,12 +11,6 @@ import UIKit
 
 class NetworkService {
     
-    static func deletePost(postId: Int, callback: @escaping () -> ()) {
-        let urlPath = "\(ApiConstants.postsPath)/\(postId)"
-        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
-        .response { response in callback() }
-    }
-    
     static func postURLSession(for user: User?, title: String?, body: String?, navC: UINavigationController?) {
            if let userId = user?.id,
            let title = title,
@@ -81,6 +75,12 @@ class NetworkService {
         }
     }
     
+    static func deletePost(postId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.postsPath)/\(postId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
+    }
+    
     static func postNewUser(name: String,
                             username: String,
                             email: String,
@@ -116,6 +116,121 @@ class NetworkService {
     
     static func deleteUser(userId: Int, callback: @escaping () -> ()) {
         let urlPath = "\(ApiConstants.usersPath)/\(userId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
+    }
+    
+    static func postNewComment(postId: Int,
+                               email: String,
+                               title: String,
+                               body: String,
+                               navC: UINavigationController?) {
+        if let url = ApiConstants.commentsURL {
+            
+            let parameters: Parameters = ["postId": postId,
+                                          "email": email,
+                                          "name": title,
+                                          "body": body]
+            AF.request(url, method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                    navC?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    static func deleteComment(commentId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.commentsPath)/\(commentId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
+    }
+    
+    static func postNewToDo(userId: Int,
+                            title: String,
+                            navC: UINavigationController?) {
+        if let url = ApiConstants.toDosURL {
+            
+            let parameters: Parameters = ["userId": userId,
+                                          "title": title,
+                                          "completed": false]
+            AF.request(url, method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                    navC?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    static func deleteToDo(toDoId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.toDosPath)/\(toDoId)"
+        AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
+        .response { response in callback() }
+    }
+    
+    static func getThumbnail(thumbnailUrl: String,
+                             callback: @escaping (_ result: UIImage?,
+                                                  _ error: AFError?) -> ()) {
+        AF.request(thumbnailUrl).responseImage { response in
+            switch response.result {
+                case .success(let image): callback (image, nil)
+                case .failure(let error): callback (nil, error)
+            }
+        }
+    }
+    
+    static func postNewAlbum(userId: Int,
+                            title: String,
+                            navC: UINavigationController?) {
+        if let url = ApiConstants.albumsURL {
+            
+            let parameters: Parameters = ["userId": userId,
+                                          "title": title]
+            AF.request(url, method: .post,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                    navC?.popViewController(animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    static func deleteAlbum(albumId: Int, callback: @escaping () -> ()) {
+        let urlPath = "\(ApiConstants.albumsPath)/\(albumId)"
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
         .response { response in callback() }
     }
