@@ -16,33 +16,18 @@ class DetailPhotoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPhoto()
-        navigationItem.title = photo?.title
+        getPhoto()
     }
     
-    private func fetchPhoto() {
-        guard let photoURL = photo?.url,
-                let url = URL(string: photoURL) else { return }
-        let urlRequest = URLRequest(url: url)
-        URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
-
+    private func getPhoto() {
+        guard let photo,
+              let imagePath = photo.url,
+              let url = URL(string: imagePath) else { return }
+        NetworkService.downloadImage(from: url) { [weak self] image, error in
             DispatchQueue.main.async {
+                self?.imageView.image = image
                 self?.activityIndicator.stopAnimating()
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                if let response = response {
-                    print(response)
-                }
-                if let data = data,
-                   let image = UIImage(data: data) {
-                    self?.imageView.image = image
-                } else {
-                    let errorImage = UIImage(named: "error404")
-                    self?.imageView.image = errorImage
-                }
             }
-        }.resume()
+        }
     }
 }

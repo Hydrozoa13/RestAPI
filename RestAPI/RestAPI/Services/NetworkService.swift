@@ -241,4 +241,23 @@ class NetworkService {
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
         .response { response in callback() }
     }
+    
+    static func getData(from url: URL, complition: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: complition).resume()
+    }
+    
+    static func downloadImage(from url: URL, callback: @escaping (_ image: UIImage?, _ error: Error?) -> ()) {
+        getData(from: url) { data, response, error in
+            if let image = CacheService.shared.imageCache.image(withIdentifier: url.description) {
+                callback(image, nil)
+                return
+            } else if let data,
+               let image = UIImage(data: data) {
+                CacheService.shared.imageCache.add(image, withIdentifier: url.description)
+                callback(image, nil)
+            } else {
+                callback(nil, error)
+            }
+        }
+    }
 }
