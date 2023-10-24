@@ -34,8 +34,13 @@ final class ImageVC: UIViewController {
                 if let response = response {
                     print(response)
                 }
-                if let data = data,
+                
+                if let image = CacheService.shared.imageCache.image(withIdentifier: imageURL) {
+                    self?.imageView.image = image
+                    return
+                } else if let data = data,
                    let image = UIImage(data: data) {
+                    CacheService.shared.imageCache.add(image, withIdentifier: imageURL)
                     self?.imageView.image = image
                 } else {
                     let errorImage = UIImage(named: "error404")
