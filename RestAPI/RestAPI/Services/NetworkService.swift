@@ -186,6 +186,30 @@ class NetworkService {
         }
     }
     
+    static func patchToDo(completed: Bool, toDoId: Int) {
+        let urlPath = "\(ApiConstants.toDosPath)/\(toDoId)"
+        if let url = URL(string: urlPath) {
+            
+            let parameters: Parameters = ["completed": completed]
+            AF.request(url, method: .patch,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
     static func deleteToDo(toDoId: Int, callback: @escaping () -> ()) {
         let urlPath = "\(ApiConstants.toDosPath)/\(toDoId)"
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)

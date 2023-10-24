@@ -31,6 +31,7 @@ class ToDoListTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ToDoCell
         let toDo = toDos[indexPath.row]
+        cell.toDoId = toDo.id
         cell.titleLbl.text = toDo.title
         switch toDo.completed {
             case true: cell.segmentedControl.selectedSegmentIndex = 1
