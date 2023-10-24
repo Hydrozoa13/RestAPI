@@ -27,4 +27,10 @@ class PhotosCVCell: UICollectionViewCell {
             self?.imageView.image = image
         }
     }
+    
+    func requestContextMenu() {
+        let contextMenu = UIContextMenuInteraction(delegate: self)
+        imageView.isUserInteractionEnabled = true
+        imageView.addInteraction(contextMenu)
+    }
 }

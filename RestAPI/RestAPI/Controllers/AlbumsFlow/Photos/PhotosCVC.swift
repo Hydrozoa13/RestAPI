@@ -50,6 +50,7 @@ class PhotosCVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotosCVCell
         let photo = photos[indexPath.row]
+        cell.requestContextMenu()
         cell.thumbnailUrl = photo.thumbnailUrl
         return cell
     }
