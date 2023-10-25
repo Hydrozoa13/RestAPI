@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 import UIKit
 
@@ -185,6 +186,30 @@ class NetworkService {
         }
     }
     
+    static func patchToDo(completed: Bool, toDoId: Int) {
+        let urlPath = "\(ApiConstants.toDosPath)/\(toDoId)"
+        if let url = URL(string: urlPath) {
+            
+            let parameters: Parameters = ["completed": completed]
+            AF.request(url, method: .patch,
+                       parameters: parameters,
+                       encoding: JSONEncoding.default)
+            .response { response in
+                debugPrint(response)
+                print(response.request as Any)
+                print(response.response as Any)
+                debugPrint(response.result)
+                
+                switch response.result {
+                case .success(let data):
+                    print(JSON(data as Any))
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
     static func deleteToDo(toDoId: Int, callback: @escaping () -> ()) {
         let urlPath = "\(ApiConstants.toDosPath)/\(toDoId)"
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
@@ -194,10 +219,16 @@ class NetworkService {
     static func getThumbnail(thumbnailUrl: String,
                              callback: @escaping (_ result: UIImage?,
                                                   _ error: AFError?) -> ()) {
-        AF.request(thumbnailUrl).responseImage { response in
-            switch response.result {
-                case .success(let image): callback (image, nil)
-                case .failure(let error): callback (nil, error)
+        if let image = CacheService.shared.imageCache.image(withIdentifier: thumbnailUrl) {
+            callback(image, nil)
+        } else {
+            AF.request(thumbnailUrl).responseImage { response in
+                switch response.result {
+                case .success(let image):
+                    CacheService.shared.imageCache.add(image, withIdentifier: thumbnailUrl)
+                    callback(image, nil)
+                case .failure(let error): callback(nil, error)
+                }
             }
         }
     }
@@ -233,5 +264,24 @@ class NetworkService {
         let urlPath = "\(ApiConstants.albumsPath)/\(albumId)"
         AF.request(urlPath, method: .delete, encoding: JSONEncoding.default)
         .response { response in callback() }
+    }
+    
+    static func getData(from url: URL, complition: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: complition).resume()
+    }
+    
+    static func downloadImage(from url: URL, callback: @escaping (_ image: UIImage?, _ error: Error?) -> ()) {
+        getData(from: url) { data, response, error in
+            if let image = CacheService.shared.imageCache.image(withIdentifier: url.description) {
+                callback(image, nil)
+                return
+            } else if let data,
+               let image = UIImage(data: data) {
+                CacheService.shared.imageCache.add(image, withIdentifier: url.description)
+                callback(image, nil)
+            } else {
+                callback(nil, error)
+            }
+        }
     }
 }
